@@ -15,11 +15,21 @@ string get_user_input();
  * @Output - string
  */
 string calculus(string number);
+/**
+ * @brief Ejecuta el loop
+ * @Input  - int 
+ * @Output - void
+ */
+void message (int money, int helado);
 int main () { 
 	// call functions here
 	string number=get_user_input();
 	string result=calculus(number);
 	cout<< result;
+	cout<<"EJERCICIO_2"<<endl;
+	int money=20;
+int helado=5;
+message (money, helado);
 	return 0;
 }
 // Function definitions
@@ -42,24 +52,6 @@ string get_user_input(){
     ++i;
 	}
   }
-# include <iostream>//EJERCICI0 2----------------------------------------------------------------------------------------------------
-# include <string>
-using namespace std;
-// Function prototypes Here
-
-/**
- * @brief Ejecuta el loop
- * @Input  - int 
- * @Output - void
- */
-void message (int money, int helado);
-int main () { 
-	// call functions here
-int money=20;
-int helado=5;
-message (money, helado);
-return 0;
-}
 // Function definitions
 void message (int money, int helado){
 for (int i=0; money>0; i+=1){

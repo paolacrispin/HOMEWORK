@@ -8,26 +8,6 @@ using namespace std;
  * @Output - void
  */
 void robot ();
-int main () {
-      // call functions here
-robot();
-return 0;
-}
-// Function definitions
-void robot (){
-cout<< "_____________" <<endl;
-cout<< "|  /\"\"\"\"\"\\  |" <<endl;
-cout<< "| /       \\ |"<<endl;
-cout<< "| | 0   0 | |" <<endl;
-cout << "| |   v   | |" <<endl;
-cout << "| \\  ___  / |" <<endl;
-cout <<"|  \\_____/  |" <<endl;
-cout << "_____________" <<endl;
-}
-#include <iostream>//EJERCICI0 2----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes Here
-
 /**
  * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
  * @Input  - void
@@ -40,30 +20,6 @@ int numbers();
  * @Output - void
  */
 void message(int value);
-int main() {
-   // call functions here
-int value= numbers();
-message(value);
-return 0;
-}
-// Function definitions
-int numbers(){
-    int x;
-cout << "Please enter a number"<<endl;
-cin >> x;
-return x;
-}
-void message(int value){
-int y=value+1;
-int z=value-1;
-int a=value*2;
-cout <<"El número "<< value<< " está entre "<<z<< " y "<<y<<"."<<endl;
-cout << "Doblado "<<value<<" es igual a "<<a<<"." ;
-}
-#include <iostream>//EJERCICI0 3---------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes Here
-
 /**
  * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
  * @Input  - void
@@ -88,12 +44,61 @@ void calculus2(int &wood_balance);
  * @Output -void
  */
 void calculus3(int &wood_balance);
-int main() {
+/**
+ * @brief Muestra las variables predeterminadas a través de tres mensajes
+ * @Input  - string
+ * @Output - void
+ */
+void variables(string x, string y);
+/**
+ * @brief Muestra las variables invertidas a través de 2 mensajes
+ * @Input  -string
+ * @Output -void
+ */
+void switch_1(string& x, string& y);
+int main () {
+      // call functions here
+robot();
+cout<<"EJERCICIO_2"<<endl;
+int value= numbers();
+message(value);
+cout<<"EJERCICIO_3"<<endl;
 int wood_balance= get_user_input1();
 calculus1(wood_balance);
 calculus2(wood_balance);
 calculus3(wood_balance);
+cout<<"EJERCICIO_4"<<endl;
+string x = "sartén";
+string y = "sombrero";
+variables(x, y);
+switch_1(x, y);
 return 0;
+}
+// Function definitions
+void robot (){
+cout<< "_____________" <<endl;
+cout<< "|  /\"\"\"\"\"\\  |" <<endl;
+cout<< "| /       \\ |"<<endl;
+cout<< "| | 0   0 | |" <<endl;
+cout << "| |   v   | |" <<endl;
+cout << "| \\  ___  / |" <<endl;
+cout <<"|  \\_____/  |" <<endl;
+cout << "_____________" <<endl;
+}
+
+// Function definitions
+int numbers(){
+    int x;
+cout << "Please enter a number"<<endl;
+cin >> x;
+return x;
+}
+void message(int value){
+int y=value+1;
+int z=value-1;
+int a=value*2;
+cout <<"El número "<< value<< " está entre "<<z<< " y "<<y<<"."<<endl;
+cout << "Doblado "<<value<<" es igual a "<<a<<"." ;
 }
   // call functions here
 int get_user_input1() {
@@ -138,31 +143,6 @@ int h2=1;
 int h3=1;
 wood_balance-=w1*d1+2*(w1*h1+d1*h1);
 cout<< "Madera contrachapada restante: "<<wood_balance<<endl;}
-
-#include <iostream>//EJERCICI0 4---------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes Here
-
-/**
- * @brief Muestra las variables predeterminadas a través de tres mensajes
- * @Input  - string
- * @Output - void
- */
-void variables(string x, string y);
-/**
- * @brief Muestra las variables invertidas a través de 2 mensajes
- * @Input  -string
- * @Output -void
- */
-void switch_1(string& x, string& y);
-int main() {
-// call functions here
-string x = "sartén";
-string y = "sombrero";
-variables(x, y);
-switch_1(x, y);
-return 0;
-}
 // Function definitions
 void variables(string x, string y){
     cout<<"x - "<<x<<endl;

@@ -1,4 +1,4 @@
-#include <iostream>//EJERCICI0 1----------------------------------------------------------------------------------------------------
+#include <iostream>
 using namespace std;
 // Function prototypes Here
 
@@ -14,11 +14,98 @@ int get_user_input();
  * @Output - int
  */
 int factorial(int number);
+/**
+* @brief Calcula un número elevado a un exponente y retorna el resultado
+ * @Input  - int
+ * @Output - int
+ */
+int result (int base, int expo);
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - string
+ */
+string get_user_input();
+/**
+ * @brief Muestra si sigue queda pastel en la nevera
+ * @Input  - string
+ * @Output - void
+ */
+void message(string number);
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - int
+ */
+int get_user_input_number1();
+/**
+ * @brief Solicita una segunda entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - int
+ */
+int get_user_input_number2();
+/**
+ * @brief Hace una cuenta regresiva decreciente 
+ * @Input  -int 
+ * @Output - void
+ */
+void counter(int first_number, int second_number);
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - string
+ */
+string get_user_input();
+/**
+ * @brief Cuenta cuantas letras tiene un nombre y el nombre completo y luego retorna la cantidad 
+ * @Input  - string
+ * @Output - int
+ */
+int counter (string full_name);
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  -void
+ * @Output - double
+ */
+double half1_input();
+/**
+ * @brief Solicita una segunda entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  -void
+ * @Output - double
+ */
+double half2_input();
+/**
+ * @brief Calcula y muestra cuanto se debe cortar una naranja de otro para que sean iguales
+ * @Input  -double
+ * @Output -void
+ */
+void calculus(double first_half, double second_half);
 int main () {
     // call functions here
   int number= get_user_input();
   int show_factorial=factorial(number);
   cout<<"el factorial de "<<number<<" es "<<show_factorial<<endl;
+  cout<<"EJERCICIO_2"<<endl;
+  int base, expo;
+  cin >>base >>expo;
+  int show_result= result (base,expo);
+  cout<<show_result<<endl;
+  cout<<"EJERCICIO_3"<<endl;
+  string save_number=get_user_input();
+message(save_number);
+cout<<"EJERCICIO_4"<<endl;
+int first_number=get_user_input_number1();
+    int second_number=get_user_input_number2();
+    counter(first_number,second_number);
+    cout<<"EJERCICIO_5"<<endl;
+string full_name= get_user_input();
+ int name_counter=counter(full_name);
+ cout <<name_counter<<endl;
+ cout << full_name.size() << endl;
+  cout<<"EJERCICIO_6"<<endl;
+ double first_half =half1_input();
+ double second_half =half2_input();
+  calculus( first_half, second_half);
   return 0;
 }
 // Function definitions
@@ -40,25 +127,6 @@ int factorial(int number){
    }
    return  calculus;
 }
-
-#include <iostream>//EJERCICI0 2----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes Here
-
-/**
- * @brief Calcula un número elevado a un exponente y retorna el resultado
- * @Input  - int
- * @Output - int
- */
-int result (int base, int expo);
-int main (){
-    // call functions here
-  int base, expo;
-  cin >>base >>expo;
-  int show_result= result (base,expo);
-  cout<<show_result<<endl;
-  return 0;
-}
 // Function definitions
 int result (int base, int expo){
   int answer=1;
@@ -68,30 +136,6 @@ for (int i = 1; i <= expo; ++i) {
       return answer;
     }
   }
-}
-
-#include <iostream>//EJERCICI0 3----------------------------------------------------------------------------------------------------
-#include <string>
-using namespace std;
-// Function prototypes Here
-
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - string
- */
-string get_user_input();
-/**
- * @brief Muestra si sigue queda pastel en la nevera
- * @Input  - string
- * @Output - void
- */
-void message(string number);
-int main() {
-    // call functions here
-string save_number=get_user_input();
-message(save_number);
-return 0;
 }
 // Function definitions
 string get_user_input(){
@@ -113,36 +157,6 @@ for (int i = 0; i <= save_number.size(); ++i) {
     }
   }
 }
-
-#include <iostream>//EJERCICI0 4----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes Here
-
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - int
- */
-int get_user_input_number1();
-/**
- * @brief Solicita una segunda entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - int
- */
-int get_user_input_number2();
-/**
- * @brief Hace una cuenta regresiva decreciente 
- * @Input  -int 
- * @Output - void
- */
-void counter(int first_number, int second_number);
-  int main() {
-      // call functions here
-    int first_number=get_user_input_number1();
-    int second_number=get_user_input_number2();
-    counter(first_number,second_number);
-      return 0;
-  }
   // Function definitions
 int get_user_input_number1(){
 int number1;
@@ -159,31 +173,6 @@ void counter(int first_number, int second_number){
       cout<<i<<endl;
   }
 }
-
-#include <iostream>//EJERCICI0 5----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes Here
-
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - string
- */
-string get_user_input();
-/**
- * @brief Cuenta cuantas letras tiene un nombre y el nombre completo y luego retorna la cantidad 
- * @Input  - string
- * @Output - int
- */
-int counter (string full_name);
-int main() {
-    // call functions here
- string full_name= get_user_input();
- int name_counter=counter(full_name);
- cout <<name_counter<<endl;
- cout << full_name.size() << endl;
- return 0;
-  }
   // Function definitions
  string get_user_input(){
     string words;
@@ -198,37 +187,6 @@ int main() {
       }
     }
   }
-
-#include <iostream>//EJERCICI0 6----------------------------------------------------------------------------------------------------
-#include <iostream>
-using namespace std;
-// Function prototypes Here
-
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  -void
- * @Output - double
- */
-double half1_input();
-/**
- * @brief Solicita una segunda entrada al usuario la cual es procesada y luego se retorna.
- * @Input  -void
- * @Output - double
- */
-double half2_input();
-/**
- * @brief Calcula y muestra cuanto se debe cortar una naranja de otro para que sean iguales
- * @Input  -double
- * @Output -void
- */
-void calculus(double first_half, double second_half);
-int main() {
-    // call functions here
-  double first_half =half1_input();
- double second_half =half2_input();
-  calculus( first_half, second_half);
-  return 0;
-}
 // Function definitions
 double half1_input(){
   double half1;
