@@ -1,4 +1,4 @@
-#include <iostream>//EJERCICI0 1----------------------------------------------------------------------------------------------------
+ #include <iostream>//EJERCICI0 1----------------------------------------------------------------------------------------------------
 using namespace std;
 // Function prototypes
 /**
@@ -27,13 +27,136 @@ int calculate_suma(double user_number1, double user_number2);
  * @Output - void
  */
 void display_output(int result);
+void EJERCICIO_1();
+/**
+* @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - double
+ */
+double get_user_input1();
+/**
+ * @brief Solicita una segunda entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - double
+ */
+double get_user_input2();
+
+/**
+ * @brief Recibe los dos valores doubles los cuales se utilizan para calcular el cociente de los numeros.
+ * @Input  - double
+ * @Output - double
+ */
+double calculate_cociente(double user_number1, double user_number2);
+
+/**
+ * @brief Recibe un valor double el cual se utiliza para preparar un mensaje que se mostrara en la consola.
+ * @Input  - double
+ * @Output - void
+ */
+void display_output(double result);
+void EJERCICIO_2();
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - string
+ */
+string get_user_input1();
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - string
+ */
+string get_user_input2();
+/**
+ * @brief Invierte el apellido y el nombre
+ * @Input  - string
+ * @Output - void 
+ */
+void switch_one(string &name, string &last_name);
+void EJERCICIO_3();
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - int
+ */
+int get_user_input1();
+/**
+ * @brief Solicita una segunda entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - int
+ */
+int get_user_input2(); 
+/**
+ * @brief escoge el puesto de trabajo
+ * @Input  - int
+ * @Output - string
+ */
+string puesto(int age_num,int experience_num);
+void EJERCICIO_4();
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - char
+ */
+char get_user_input1();
+ 
+/**
+ * @brief identifica si es mayusccula, minuscula o no alfabetico
+ * @Input  - char
+ * @Output - string
+ */
+string char_validation(char char_sample);
+void EJERCICIO_5();
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - int
+ */
+int get_user_input1();
+ 
+/**
+ * @brief identifica si coincide con el collar o no
+ * @Input  - int 
+ * @Output - string
+ */
+string validation(int code);
+void EJERCICIO_6();
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - int
+ */
+int get_user_input1();
+/**
+ * @brief muestra los documentos encontrados
+ * @Input  - int
+ * @Output - string
+ */
+string convertion(int doc_number);
+void EJERCICIO_7();
+/**
+ * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
+ * @Input  - void
+ * @Output - int
+ */
+int get_user_input1();
+/**
+ * @brief muestra los documentos encontrados
+ * @Input  - int
+ * @Output - string
+ */
+string convertion(int doc_number);
+void EJERCICIO_8();
 
 int main() {
-  // call functions here
-  double user_number1 = get_user_input1();
-  double user_number2 = get_user_input2();
-  int result = calculate_suma(user_number1, user_number2);
-  display_output(result);
+  EJERCICIO_1();
+  EJERCICIO_2();
+  EJERCICIO_3();
+  EJERCICIO_4();
+  EJERCICIO_5();
+  EJERCICIO_6();
+  EJERCICIO_7();
+  EJERCICIO_8();
   return 0;
 }
 
@@ -59,47 +182,12 @@ int calculate_suma(double number1, double number2) {
 void display_output(int result) {
   cout << "the result is " << result << endl;
 }
-
-#include <iostream>//EJERCICI0 2----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - double
- */
-double get_user_input1();
-/**
- * @brief Solicita una segunda entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - double
- */
-double get_user_input2();
-
-/**
- * @brief Recibe los dos valores doubles los cuales se utilizan para calcular el cociente de los numeros.
- * @Input  - double
- * @Output - double
- */
-double calculate_cociente(double user_number1, double user_number2);
-
-/**
- * @brief Recibe un valor double el cual se utiliza para preparar un mensaje que se mostrara en la consola.
- * @Input  - double
- * @Output - void
- */
-void display_output(double result);
-
-int main() {
-  // call functions here
+void EJERCICIO_1() {
   double user_number1 = get_user_input1();
   double user_number2 = get_user_input2();
-  double result = calculate_cociente(user_number1, user_number2);
+  int result = calculate_suma(user_number1, user_number2);
   display_output(result);
-  return 0;
 }
-
-// Function definitions
 double get_user_input1() {
   double number1;
   cout << "please enter your first number" << endl;
@@ -121,37 +209,11 @@ double calculate_cociente(double number1, double number2) {
 void display_output(double result) {
   cout << "the result is " << result << endl;
 }
-
-#include <iostream>//EJERCICIO 3----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - string
- */
-string get_user_input1();
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - string
- */
-string get_user_input2();
-/**
- * @brief Invierte el apellido y el nombre
- * @Input  - string
- * @Output - void 
- */
-void switch_one(string &name, string &last_name);
-
-int main() {
-  // call functions here
-  string name= get_user_input1();
-  string last_name= get_user_input2();
-  cout <<name <<last_name<<endl;
-  switch_one( name, last_name);
-    cout <<name <<last_name<<endl;
-  return 0;
+void EJERCICIO_2() {
+  double user_number1 = get_user_input1();
+  double user_number2 = get_user_input2();
+  int result = calculate_cociente(user_number1, user_number2);
+  display_output(result);
 }
 string get_user_input1() {
   string name;
@@ -171,39 +233,13 @@ void switch_one(string &name, string &last_name){
     name=last_name;
     last_name=new_place;
 }
-
-#include <iostream>//EJERCICI0 4----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - int
- */
-int get_user_input1();
-/**
- * @brief Solicita una segunda entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - int
- */
-int get_user_input2(); 
-/**
- * @brief escoge el puesto de trabajo
- * @Input  - int
- * @Output - string
- */
-string puesto(int age_num,int experience_num);
-
-int main() {
-  // call functions here
-  int age_num= get_user_input1();
-  int experience_num = get_user_input2();
-  string puesto_aplicable = puesto (age_num,experience_num);
-  cout<<"You can apply to "<<puesto_aplicable<<endl;
-  return 0;
+void EJERCICIO_3() {
+ string name= get_user_input1();
+  string last_name= get_user_input2();
+  cout <<name <<last_name<<endl;
+  switch_one( name, last_name);
+    cout <<name <<last_name<<endl;
 }
-
-// Function definitions
 int get_user_input1(){
   int age;
   cout << "please enter your age" << endl;
@@ -227,32 +263,12 @@ string puesto(int age_num,int experience_num) {
     return  "No puede postularse";
   }
 }
-#include <iostream>//EJERCICI0 5----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - char
- */
-char get_user_input1();
- 
-/**
- * @brief identifica si es mayusccula, minuscula o no alfabetico
- * @Input  - char
- * @Output - string
- */
-string char_validation(char char_sample);
-
-int main() {
-  // call functions here
-  char char_sample= get_user_input1();
-  string result = char_validation(char_sample);
-  cout<< result;
-  return 0;
+void EJERCICIO_4(){
+ int age_num= get_user_input1();
+  int experience_num = get_user_input2();
+  string puesto_aplicable = puesto (age_num,experience_num);
+  cout<<"You can apply to "<<puesto_aplicable<<endl; 
 }
-
-// Function definitions
 char get_user_input1(){
   char character;
   cout << "write below" << endl;
@@ -269,32 +285,11 @@ string char_validation(char char_sample) {
     return "no es un caracter";
   }
 }
-#include <iostream>//EJERCICI0 6----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - int
- */
-int get_user_input1();
- 
-/**
- * @brief identifica si coincide con el collar o no
- * @Input  - int 
- * @Output - string
- */
-string validation(int code);
-
-int main() {
-  // call functions here
-  int code = get_user_input1();
-  string result = validation(code);
+void EJERCICIO_5(){
+  char char_sample= get_user_input1();
+  string result = char_validation(char_sample);
   cout<< result;
-  return 0;
 }
-
-// Function definitions
 int get_user_input1(){
   int code_f;
   cout << "write below the code you found" << endl;
@@ -309,31 +304,11 @@ string validation(int code) {
     return "Esto no es de Fibonacci";
   }
 }
-
-#include <iostream>//EJERCICI0 7----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - int
- */
-int get_user_input1();
-/**
- * @brief muestra los documentos encontrados
- * @Input  - int
- * @Output - string
- */
-string convertion(int doc_number);
- 
-int main() {
-  // call functions here
-  int doc_number = get_user_input1();
-  cout<< convertion(doc_number);
-  return 0;
+void EJERCICIO_6(){
+  int code = get_user_input1();
+  string result = validation(code);
+  cout<< result;
 }
-
-// Function definitions
 int get_user_input1(){
   int document;
   cout << "write below the number of documents" << endl;
@@ -345,31 +320,9 @@ string convertion(int doc_number) {
     string  convert= to_string(doc_number);
   return convert+" documentos encontrados";
 }
-
-#include <iostream>//EJERCICI0 8----------------------------------------------------------------------------------------------------
-using namespace std;
-// Function prototypes
-/**
- * @brief Solicita una entrada al usuario la cual es procesada y luego se retorna.
- * @Input  - void
- * @Output - int
- */
-int get_user_input1();
-/**
- * @brief muestra los documentos encontrados
- * @Input  - int
- * @Output - string
- */
-string convertion(int doc_number);
- 
-int main() {
-  // call functions here
-  int doc_number = get_user_input1();
-  cout<< convertion(doc_number);
-  return 0;
-}
-
-// Function definitions
+void EJERCICIO_7(){
+int doc_number = get_user_input1();
+  cout<< convertion(doc_number);}
 int get_user_input1(){
   int document;
   cout << "write below the number of documents" << endl;
@@ -386,4 +339,8 @@ string convertion(int doc_number) {
     string  convert= to_string(doc_number);
     return convert + " documentos encontrados";
   }
+}
+void EJERCICIO_8(){
+   int doc_number = get_user_input1();
+  cout<< convertion(doc_number);
 }
