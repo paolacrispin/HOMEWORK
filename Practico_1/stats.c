@@ -56,7 +56,6 @@ void printArray(unsigned char *test, int size) {
 
 void printStats(unsigned char *test, int size) {
     sortArray(test, size);
-    printf("Valores ordenados: ");
     printArray(test, size);
     printf("Valor máximo: %d\n", findMax(test, size));
     printf("Valor mínimo: %d\n", findMin(test, size));
