@@ -42,7 +42,7 @@ def process_query(user_input, bot_name):
         #       ya que el usuario puede responder con la primera letra en mayuscula: Usar lower()
         #       la funcion retorna f"format_friends_count(count)"
             if user_input.lower() == "cuantos amigos tengo?":
-                count = 3
+                count = random.randint(0, 10)
                 return format_friends_count(count)
 
         # TODO: Si la pregunta es "donde viven mis amigos?"
@@ -109,7 +109,7 @@ def runner():
     # recibimos input del usuario
     # note como modificamos la string con el metodo capitalize() para que se visualice mejor
     user_name = input("Enter your name: ").capitalize()
-    save_reporte(user_name)
+    
     # Mensaje de bienvenido
     print(f"Hello there {user_name}, I am your personal assistant {bot_name}")
     save_reporte(f"Hello there {user_name}, I am your personal assistant {bot_name}")
