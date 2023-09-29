@@ -11,7 +11,7 @@ STEP_M = 0.65  # Longitud de un paso en metros.
 storage_data = {}  # Diccionario para almacenar los datos recibidos.
 
 
-def check_correct_data(data):
+def check_correct_data(data : dict) -> bool:
     """Comprobar si el paquete recibido es correcto."""
     if data[0] is not None and data[1] > 0 :
         return True
@@ -19,7 +19,7 @@ def check_correct_data(data):
     else :
         return False
 
-def check_correct_time(time):
+def check_correct_time(time : datetime) -> bool:
     """Comprobar si el parámetro tiempo es correcto."""
     if not storage_data : #verifica si está vacío
         return True
@@ -28,7 +28,7 @@ def check_correct_time(time):
         return time > max(storage_data.keys())
 
 
-def get_step_day(steps):
+def get_step_day(steps : int ) -> int :
     """Obtén el número de pasos dados durante el día actual."""
     get_total_steps : int = 0
     if len(storage_data)==1 :
@@ -41,20 +41,20 @@ def get_step_day(steps):
         return get_total_steps
     
 
-def get_distance(steps):
+def get_distance(steps : int ) -> float:
     """Obtén la distancia recorrida en km."""
     return ((steps*STEP_M)/1000)
 
-def current_time_hour(time):
+def current_time_hour(time : datetime) -> float:
     horas = time.hour
     minutos = time.minute / 60.0
     return horas + minutos
 
-def get_calories_burned(dist, current_time):
+def get_calories_burned(dist : float, current_time : float) -> float:
     """Obtén las calorías quemadas."""    
     return (K_1*WEIGHT+(((dist/current_time)*(dist/current_time))/HEIGHT)*K_2*WEIGHT)*(current_time*60.0)
 
-def get_achievement(dist):
+def get_achievement(dist : float ) -> str:
     if dist<2 :
         return "Está bien tomarse el día de descanso. No siempre se puede ganar."
   
@@ -68,28 +68,28 @@ def get_achievement(dist):
         return"¡Gran entrenamiento! Objetivo cumplido." 
 
 #Convierte el string time en un objeto del tipo tiempo
-def convertir_tiempo(tiempo_str):
+def convertir_tiempo(tiempo_str : str) -> datetime:
     if tiempo_str is None:
         return None
     else:
-        return datetime.strptime(tiempo_str, FORMAT)
+        return datetime.strptime(tiempo_str, FORMAT).time()
 
 # Coloca la función show_message.
-def show_message(time, day_steps, dist, calories, achievement):
+def show_message(time : datetime, day_steps : int, dist : float, calories : float, achievement : str) -> None:
     print(f"Tiempo: {time}.")
     print(f"Pasos dados hoy: {day_steps}.")
     print(f"La distancia fue {dist}km.")
     print(f"Has quemado {calories} cal.")
     print(f"{achievement}\n")
 
-def accept_package(data):
+def accept_package(data : dict) -> dict:
 
     """Procesar paquete de datos."""
     if check_correct_data(data)!= True : # Si la función package check devuelve False.
         return 'Paquete inválido'
 
     # Desempaqueta los datos recibidos.
-    pack_time = convertir_tiempo(data[0])# Convierte el string con el tiempo en un objeto del tipo tiempo.
+    pack_time : datetime = convertir_tiempo(data[0])# Convierte el string con el tiempo en un objeto del tipo tiempo.
 
     if check_correct_time(pack_time)!= True : # Si la función time value check devuelve False.
         return 'Valor de tiempo inválido'
@@ -97,14 +97,14 @@ def accept_package(data):
     # Agrega un nuevo elemento al diccionario storage_data.
     storage_data[pack_time] = data[1]
 
-    day_steps = get_step_day(data[1]) # Guarda el resultado del conteo de los pasos dados.
-    dist = get_distance(day_steps) # Guarda el resultado del cálculo de la distancia recorrida.
-    current_time = current_time_hour(pack_time)
-    calories_burned = get_calories_burned(dist, current_time)# Guarda el resultado del cálculo de las calorías quemadas.
-    achievement =  get_achievement(dist)# Guarda el mensaje motivacional seleccionado.
+    day_steps : int = get_step_day(data[1]) # Guarda el resultado del conteo de los pasos dados.
+    dist : float = get_distance(day_steps) # Guarda el resultado del cálculo de la distancia recorrida.
+    current_time : float = current_time_hour(pack_time)
+    calories_burned : float = get_calories_burned(dist, current_time)# Guarda el resultado del cálculo de las calorías quemadas.
+    achievement : str=  get_achievement(dist)# Guarda el mensaje motivacional seleccionado.
 
     # Llama la función show_message().
-    show_message(data[0], day_steps, dist, calories_burned, achievement)
+    show_message(pack_time, day_steps, dist, calories_burned, achievement)
 
     # Devuelve el diccionario storage_data.
     return storage_data
