@@ -1,25 +1,5 @@
 Hello there Pao, I am your personal assistant Bob
-como estas?
-Todo bien, Gracias! Tu?
-mal
-Hey aqui estoy para ayudarte
 cuantos amigos tengo?
-Tienes 10 amigos!
-donde viven mis amigos?
-Viven en: Santa Cruz
-  Santa Cruz
-  Moscu
-  Moscu
-  San Peterburgo
-  Laussane
-  Paris
-  Roma
-  Sucre
-que hora es?
-05:38
-good
-No entiendo
-super
-Me alegra saberlo!
-quit
+Tienes 5 amigos!
+chau
 Bye bye! Pao

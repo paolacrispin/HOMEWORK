@@ -13,7 +13,7 @@ from database import *
 #
 #                Si la respuesta es gracias
 #                la funcion retorna "Hey para eso estamos!"
-def how_am_i(user_input):
+def how_am_i(user_input : str) -> str:
 
     if user_input.lower() == "todo bien" or user_input.lower() == "super" or user_input.lower() == "bien":
         return random.choice(HOW_ARE_YOU)
@@ -42,7 +42,7 @@ def process_query(user_input, bot_name):
         #       ya que el usuario puede responder con la primera letra en mayuscula: Usar lower()
         #       la funcion retorna f"format_friends_count(count)"
             if user_input.lower() == "cuantos amigos tengo?":
-                count = random.randint(0, 10)
+                count : int = random.randint(0, 10)
                 return format_friends_count(count)
 
         # TODO: Si la pregunta es "donde viven mis amigos?"
@@ -50,14 +50,14 @@ def process_query(user_input, bot_name):
             if user_input == "donde viven mis amigos?":
                     string_cities = ""
                     cities = FRIENDS.values()
-                    string_cities = "  ".join(cities)
+                    string_cities : str = "  ".join(cities)
                     return f"Viven en: {string_cities}"
 
         # TODO: Si la preguntas es que hora es
         #       la funcion retorna la hora actual en SCZ
         #       usar la funcion de ayuda what_time(city)
             if "que hora es?" == user_input.lower():
-                city = random.choice(list(UTC_OFFSETS.keys()))
+                city : str= random.choice(list(UTC_OFFSETS.keys()))
                 return what_time(city)
 
         # TODO: si el usuario esta saludando "Hola", "buenas", etc
@@ -80,7 +80,7 @@ def process_query(user_input, bot_name):
             return f"No entiendo"
 
 
-def format_friends_count(count):
+def format_friends_count(count : int) -> str:
     if count == 1:
         return f"Tienes {count} amigo!"
     if count > 1:
